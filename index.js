@@ -18,9 +18,9 @@ async function main() {
 
     const mp3 = await openai.audio.speech.create({
 
-      model: "tts-1",
-      voice: "echo", // OPTIONS include (alloy, echo, fable, onyx, nova, and shimmer)
-      input: "Hello, my name is Chad Bot. What do you want to chat about?" // 126 characters = about $0.00189 for tts-1, tts-1-hd is 2x more cost than regular tts-1
+      model: "tts-1", // tts-1 or tts-1-hd
+      voice: "onyx", // OPTIONS include (alloy, echo, fable, + onyx, nova, and shimmer)
+      input: "Hheyy, if I had a voiiice... I'd prolly say, Hey th-… thhank yoou forrr turnin onn thhhe Chadd" // 126 characters = about $0.00189 for tts-1, tts-1-hd is 2x more cost than regular tts-1
 
     });
 
