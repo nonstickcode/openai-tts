@@ -2,23 +2,23 @@ import fs from "fs"; // filesystem module
 import path from "path"; // path module
 import OpenAI from "openai"; // OpenAI SDK
 import admin from "firebase-admin"; // Firebase Admin SDK
-
+import { config } from "dotenv";
+config();
 
 
 // Initialize Firebase Admin SDK
-const serviceAccount = require("./path/to/your/serviceAccountKey.json"); // Replace with the path to your Firebase service account key JSON file
+const serviceAccountKeyPath = process.env.FIREBASE_SERVICE_ACCOUNT_KEY;
+
+
 admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  storageBucket: "your-firebase-storage-bucket-url",
+  credential: admin.credential.cert(require(serviceAccountKeyPath)),
+  storageBucket: "chad-bot-tts-storage.appspot.com",
 });
 
 const bucket = admin.storage().bucket();
 
+// const speechFile = path.resolve(`./audio-files/${Date()}.mp3`); // path and filename for the speech file
 
-
-const speechFile = path.resolve(`./audio-files/${Date()}.mp3`); // path and filename for the speech file
-import { config } from "dotenv";
-config();
 
 
 // Create a new instance of the OpenAI object with your API key
@@ -40,13 +40,30 @@ async function main() {
 
     });
 
-    console.log(speechFile); // log the path where the speech file saved
+    // console.log(speechFile); // log the path where the speech file saved
 
     const buffer = Buffer.from(await mp3.arrayBuffer()); // convert the response to a buffer
 
-    await fs.promises.writeFile(speechFile, buffer); // write the buffer to a file
+    // Save the buffer to Firebase Storage
+  const remoteFilePath = `${Date()}.mp3`;
+  const file = bucket.file(remoteFilePath);
+
+  await file.save(buffer, {
+    contentType: "audio/mpeg", // Set the content type for the file
+    metadata: {
+      metadata: {
+        customKey: "value", // Optional: You can add custom metadata to the file
+      },
+    },
+  });
+
+  console.log(`Audio file saved to Firebase Storage at gs://${bucket.name}/${remoteFilePath}`);
+
 
 };
+
+
+
 
 main();
 
