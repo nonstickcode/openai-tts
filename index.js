@@ -1,6 +1,20 @@
 import fs from "fs"; // filesystem module
 import path from "path"; // path module
 import OpenAI from "openai"; // OpenAI SDK
+import admin from "firebase-admin"; // Firebase Admin SDK
+
+
+
+// Initialize Firebase Admin SDK
+const serviceAccount = require("./path/to/your/serviceAccountKey.json"); // Replace with the path to your Firebase service account key JSON file
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  storageBucket: "your-firebase-storage-bucket-url",
+});
+
+const bucket = admin.storage().bucket();
+
+
 
 const speechFile = path.resolve(`./audio-files/${Date()}.mp3`); // path and filename for the speech file
 import { config } from "dotenv";
