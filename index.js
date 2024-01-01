@@ -36,7 +36,7 @@ async function main() {
     const mp3 = await openai.audio.speech.create({
       model: "tts-1",
       voice: "onyx",
-      input: "Hheyy, if I had a voiiice... I'd prolly say, Hey th-… thhank yoou forrr turnin onn thhhe Chadd"
+      input: "Whoa, brotha! Tha'ss amaaaaaazing! Can't waaaait to have me a voice, ya know? It'ssss gonna be liiiiiit, dude!"
     });
 
     // Convert the response to a buffer
@@ -57,9 +57,21 @@ async function main() {
       },
     });
 
+ // Generate a signed URL for the audio file
+    const [url] = await file.getSignedUrl({
+      action: 'read',
+      expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString() // Expires in 1 week
+    });
+
+
     console.log(`Audio file saved to Firebase Storage at gs://${bucket.name}/${remoteFilePath}`);
+
+    console.log(`Audio file accessible at: ${url}`);
+
   } catch (error) {
+
     console.error("Error in main function:", error);
+
   }
 }
 
