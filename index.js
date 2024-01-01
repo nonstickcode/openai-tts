@@ -12,7 +12,7 @@ const openai = new OpenAI({
   apiKey: process.env.OPEN_AI_API_KEY,
 });
 
-
+//
 // The main function to create speech
 async function main() {
 
