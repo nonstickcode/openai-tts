@@ -20,7 +20,8 @@ async function main() {
 
       model: "tts-1", // tts-1 or tts-1-hd
       voice: "onyx", // OPTIONS include (alloy, echo, fable, + onyx, nova, and shimmer)
-      input: "Hheyy, if I had a voiiice... I'd prolly say, Hey th-… thhank yoou forrr turnin onn thhhe Chadd" // 126 characters = about $0.00189 for tts-1, tts-1-hd is 2x more cost than regular tts-1
+      input: "Hi Emmett!"
+      // "Hheyy, if I had a voiiice... I'd prolly say, Hey th-… thhank yoou forrr turnin onn thhhe Chadd" // 126 characters = about $0.00189 for tts-1, tts-1-hd is 2x more cost than regular tts-1
 
     });
 
