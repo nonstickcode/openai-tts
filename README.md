@@ -2,3 +2,5 @@ The FIREBASE_SERVICE_ACCOUNT key json file was added to config dir and only edit
 NO ----text removed------ NONE from the json file downloaded from firebase.
 
 project in firebase budget set to $10 adjust in firebase if needed, apple card is linked to payment
+
+This project is working, just enter "node index.js" in terminal and it gets audio for input entered
