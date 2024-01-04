@@ -1,8 +1,24 @@
-The FIREBASE_SERVICE_ACCOUNT key json file was added to config dir and only edited the name of the json file to a simple name
-NO ----text removed------ NONE from the json file downloaded from firebase.
+# openai-tts
 
-above is only on this project but for backend on chad bot it is added as environmental variable to vercel, just copy and paste whole file contents as is and paste into field in vercel, no edits needed there.
+## Overview
 
-project in firebase budget set to $10 adjust in firebase if needed, apple card is linked to payment
+openai-tts is a straightforward, proof-of-concept terminal application created using Node.js. Its primary function is to explore and test the capabilities of OpenAI's new Text-to-Speech (TTS) API. This project serves as the foundational step towards integrating TTS features into larger applications, such as the Chad Bot app project.
 
-This project is working, just enter "node index.js" in terminal and it gets audio for input entered
+## Features
+
+- **Basic TTS Conversion**: Allows users to input text and receive audio output, showcasing the basic functionality of OpenAI's TTS API.
+- **Node Terminal Application**: Simple and easy-to-use terminal-based application, making it accessible for quick tests and demonstrations.
+- **Proof of Concept**: Demonstrates the potential and ease of integrating OpenAI's TTS API into larger projects.
+
+## How to Use
+
+1. **Setup**: Clone the repository and install dependencies via npm.
+2. **Run the App**: Execute the app in the terminal and follow prompts to input text.
+3. **Receive Audio**: Listen to the TTS conversion and verify the API's functionality.
+
+## Future Scope
+
+- This project is a stepping stone for more complex implementations in future applications.
+- Feedback and insights gained from this app will guide the integration of TTS features in the Chad Bot app.
+
+Thank you for exploring openai-tts. This project illuminates the path forward for incorporating advanced TTS capabilities in application development.
