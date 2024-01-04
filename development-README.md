@@ -6,3 +6,8 @@ above is only on this project but for backend on chad bot it is added as environ
 project in firebase budget set to $10 adjust in firebase if needed, apple card is linked to payment
 
 This project is working, just enter "node index.js" in terminal and it gets audio for input entered
+
+if cloning repo you need to add .env file with OPENAI_API_KEY=   with API Key for openai pasted in after =
+
+and also ./config/chad-bot-tts-storage-firebase-adminsdk.json     containing the json key from firebase
+
