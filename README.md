@@ -1,5 +1,7 @@
 # openai-tts
 
+![Project Image](./readme-image.png)
+
 ## Overview
 
 openai-tts is a straightforward, proof-of-concept terminal application created using Node.js. Its primary function is to explore and test the capabilities of OpenAI's new Text-to-Speech (TTS) API. This project serves as the foundational step towards integrating TTS features into larger applications, such as the Chad Bot app project.
